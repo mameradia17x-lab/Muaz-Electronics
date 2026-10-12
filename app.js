@@ -86,9 +86,8 @@ function renderProducts(){
   var q=state.q.trim().toLowerCase(),list=window.PRODUCTS.filter(function(p){return (state.cat==='all'||p.cat===state.cat)&&(!q||(p.name+' '+p.spec).toLowerCase().indexOf(q)>=0);});
   $('#pgrid').innerHTML=list.map(function(p,i){
     var g=GRAD[p.cat]||GRAD.other,msg='Hello Muaz Electronics, I am interested in '+p.name+'. Is it available?';
-    return '<article class="prod rv" style="--d:'+((i%4)*.06)+'s"><div class="pimg" style="--g1:rgba('+g[0]+',.5);--g2:rgba('+g[1]+',.4)"><span class="ico">'+ic(p.cat==='other'?'laptop':p.cat)+'</span></div><div class="pbody"><b>'+esc(p.name)+'</b><small>'+esc(p.spec)+'</small>'+
-      (p.price?'<div class="price">'+p.price.toLocaleString('en-US')+'<small>'+esc(T('birr'))+'</small></div>':'<div class="price ask">'+esc(T('ask_price'))+'</div>')+
-      '<a class="pbtn" target="_blank" rel="noopener" href="'+LINK.wa(msg)+'"><span class="ico" style="width:18px;height:18px">'+ic('chat')+'</span>'+esc(T('ask'))+'</a></div></article>';
+    return '<a class="prod rv" target="_blank" rel="noopener" aria-label="'+esc(p.name)+'" href="'+LINK.wa(msg)+'" style="--d:'+((i%4)*.06)+'s"><div class="pimg" style="--g1:rgba('+g[0]+',.5);--g2:rgba('+g[1]+',.4)"><span class="ico">'+ic(p.cat==='other'?'laptop':p.cat)+'</span></div><div class="pbody"><b>'+esc(p.name)+'</b><small>'+esc(p.spec)+'</small>'+
+      (p.price?'<div class="price">'+p.price.toLocaleString('en-US')+'<small>'+esc(T('birr'))+'</small></div>':'<div class="price ask">'+esc(T('ask_price'))+'</div>')+'</div></a>';
   }).join('');
   $('#pempty').hidden=list.length>0;watch($('#pgrid'));
 }
