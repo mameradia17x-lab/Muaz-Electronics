@@ -17,7 +17,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ElectronicsStore","name":"Muaz Electronics","telephone":"+251976684052","address":{"@type":"PostalAddress","streetAddress":"Bole","addressLocality":"Adama","addressCountry":"ET"},"geo":{"@type":"GeoCoordinates","latitude":8.5693687,"longitude":39.2844738},"image":"owner.jpg"}</script>
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body><a class="skip" href="#home">Skip to content</a>
 <a class="skip" href="#shop">Skip to content</a>
 
 <header class="nav" id="nav">
@@ -98,11 +98,11 @@
         <label><span data-i18n="f_service">Service</span><select id="fService"></select></label>
         <div class="row2">
           <label><span data-i18n="f_device">Phone brand and model</span><input id="fDevice" autocomplete="off" placeholder="Samsung A14"></label>
-          <label><span data-i18n="f_imei">IMEI or serial number (optional)</span><input id="fImei" inputmode="numeric" autocomplete="off" placeholder="15 digits"><small id="imeiHint" class="hint"></small></label>
+          <label><span data-i18n="f_imei">IMEI or serial number (optional)</span><input id="fImei" inputmode="numeric" spellcheck="false" autocomplete="off" placeholder="15 digits"><small id="imeiHint" class="hint"></small></label>
         </div>
         <div class="row2">
-          <label><span data-i18n="f_name">Your name</span><input id="fName" autocomplete="name"></label>
-          <label><span data-i18n="f_phone">Your phone</span><input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09..."></label>
+          <label><span data-i18n="f_name">Your name</span><input id="fName" name="name" autocomplete="name"></label>
+          <label><span data-i18n="f_phone">Your phone</span><input id="fPhone" name="phone" type="tel" spellcheck="false" inputmode="tel" autocomplete="tel" placeholder="09..."></label>
         </div>
         <label><span data-i18n="f_notes">Anything else we should know?</span><textarea id="fNotes" rows="3"></textarea></label>
         <div class="field"><span class="lab" data-i18n="f_method">I will pay with</span><div class="seg" id="fMethod" role="group"></div></div>
